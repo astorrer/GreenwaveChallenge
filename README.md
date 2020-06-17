@@ -1,24 +1,11 @@
-# README
+# Greenwave Code Challenge (Aaron Storrer)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application was created as an interview challenge.
 
-Things you may want to cover:
+Application Information
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby 2.7.1
+* Rails 6.x.x
+* SQLite used in development. PostgreSQL in production.
+* Tests written in RSPEC.
+* Bootstrap 4 used for CSS framework.
