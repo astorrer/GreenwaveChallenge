@@ -12,4 +12,4 @@ Application Information
 
 ## Installing Bootstrap 4
 I tried to do this using the bootstrap-rails gem and jQuery, but I quickly figured out that Rails 6.0 had changed.
-I ended up following the information on this site to figure it out: https://www.timdisab.com/installing-bootstrap-4-on-rails-6/. Personally I feel like the older asset pipeline was simpler, but that's just me.
+I ended up following the information on this site to figure it out: https://www.timdisab.com/installing-bootstrap-4-on-rails-6/. I feel like the older asset pipeline was simpler, but that's just me.
