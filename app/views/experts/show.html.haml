@@ -1,0 +1,31 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @expert.name
+%p
+  %b Url:
+  = @expert.url
+
+%h1 Heading Tags
+
+%table
+  %thead
+    %tr
+      %th Tag
+      %th Url
+      %th Expert
+      %th
+      %th
+      %th
+
+  %tbody
+    - @tags.each do |tag|
+      %tr
+        %td= tag.tag
+        %td= tag.url
+        %td= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' }
+
+= link_to 'Edit', edit_expert_path(@expert)
+\|
+= link_to 'Back', experts_path
