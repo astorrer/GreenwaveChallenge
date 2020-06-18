@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @expert.name
+%p
+  %b Url:
+  = @expert.url
+
+= link_to 'Edit', edit_expert_path(@expert)
+\|
+= link_to 'Back', experts_path
