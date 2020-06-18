@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :tags
   resources :experts
   root to: 'static_pages#home'
 

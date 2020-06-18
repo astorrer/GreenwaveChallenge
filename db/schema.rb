@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_013347) do
+ActiveRecord::Schema.define(version: 2020_06_18_023548) do
 
   create_table "experts", force: :cascade do |t|
     t.string "name"
@@ -19,4 +19,14 @@ ActiveRecord::Schema.define(version: 2020_06_18_013347) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "tag"
+    t.string "url"
+    t.integer "expert_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["expert_id"], name: "index_tags_on_expert_id"
+  end
+
+  add_foreign_key "tags", "experts"
 end

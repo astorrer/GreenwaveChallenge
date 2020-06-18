@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Tag:
+  = @tag.tag
+%p
+  %b Url:
+  = @tag.url
+%p
+  %b Expert:
+  = @tag.expert
+
+= link_to 'Edit', edit_tag_path(@tag)
+\|
+= link_to 'Back', tags_path

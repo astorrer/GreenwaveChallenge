@@ -10,4 +10,7 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render "layouts/nav"
-    = yield
+    .container
+      .row
+        .col-lg-12
+          = yield

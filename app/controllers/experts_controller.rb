@@ -1,6 +1,9 @@
 class ExpertsController < ApplicationController
   before_action :set_expert, only: [:show, :edit, :update, :destroy]
 
+  # Needed for nokogiri.
+  require 'open-uri'
+
   # GET /experts
   # GET /experts.json
   def index
@@ -10,6 +13,7 @@ class ExpertsController < ApplicationController
   # GET /experts/1
   # GET /experts/1.json
   def show
+    @tags = @expert.tags.all
   end
 
   # GET /experts/new
@@ -30,6 +34,7 @@ class ExpertsController < ApplicationController
       if @expert.save
         format.html { redirect_to @expert, notice: 'Expert was successfully created.' }
         format.json { render :show, status: :created, location: @expert }
+        set_heading_tags(@expert.url) # Must be called after save.
       else
         format.html { render :new }
         format.json { render json: @expert.errors, status: :unprocessable_entity }
@@ -59,6 +64,29 @@ class ExpertsController < ApplicationController
       format.html { redirect_to experts_url, notice: 'Expert was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # Get all of the heading tags from the provided URL. Save them to the tags table.
+  def set_heading_tags(url)
+
+    html = URI.open(url)
+    parsed_data = Nokogiri::HTML.parse(html)
+
+    heading_one_tags = parsed_data.xpath("//h1")
+    heading_one_tags.each do |tag|
+      @expert.tags.create(tag: "h1", url: "#{tag.text}")
+    end
+
+    heading_two_tags = parsed_data.xpath("//h2")
+    heading_two_tags.each do |tag|
+      @expert.tags.create(tag: "h2", url: "#{tag.text}")
+    end
+
+    heading_three_tags = parsed_data.xpath("//h3")
+    heading_three_tags.each do |tag|
+      @expert.tags.create(tag: "h3", url: "#{tag.text}")
+    end
+
   end
 
   private
