@@ -10,13 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_034334) do
+ActiveRecord::Schema.define(version: 2020_06_18_173519) do
 
   create_table "experts", force: :cascade do |t|
     t.string "name"
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer "expert_id"
+    t.integer "friend_id"
   end
 
   create_table "shortened_urls", force: :cascade do |t|
