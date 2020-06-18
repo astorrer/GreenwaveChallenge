@@ -14,7 +14,9 @@
     = link_to @expert.url
 
     %hr
-    %h5 Friends
+    %h5= "Friends: " + @friends_count.to_s
+    - @friends.each do |friend|
+      = link_to friend.name, expert_path(friend.id)
 
     %hr
     %h5 Heading Tags

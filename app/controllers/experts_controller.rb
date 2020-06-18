@@ -14,6 +14,8 @@ class ExpertsController < ApplicationController
   # GET /experts/1.json
   def show
     @tags = @expert.tags.all
+    @friends = @expert.friends
+    @friends_count = @expert.friends.count
   end
 
   # GET /experts/new

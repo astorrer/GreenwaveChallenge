@@ -25,3 +25,6 @@ Nokogiri was used for this requirement. I created a table called tags, using a h
 
 ## Shortening URLs
 I considered setting this up myself, but there is a gem for this problem. https://github.com/jpmcgrath/shortener
+
+## Creating a bi-directional Relationship
+This was something that I hadn't needed to do before. The tricky part to understand, at least for me, was that I needed the relationship to reflect both ways. I understood that the experts table would need to have a has_many self-referential table to make this work.
