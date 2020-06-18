@@ -4,7 +4,7 @@
   %thead
     %tr
       %th Name
-      %th Url
+      %th Shortened Url
       %th
       %th
       %th
@@ -13,7 +13,7 @@
     - @experts.each do |expert|
       %tr
         %td= expert.name
-        %td= expert.url
+        %td= short_url(expert.url)
         %td= link_to 'Show', expert
         %td= link_to 'Edit', edit_expert_path(expert)
         %td= link_to 'Destroy', expert, method: :delete, data: { confirm: 'Are you sure?' }
