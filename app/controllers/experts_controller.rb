@@ -35,6 +35,7 @@ class ExpertsController < ApplicationController
         format.html { redirect_to @expert, notice: 'Expert was successfully created.' }
         format.json { render :show, status: :created, location: @expert }
         set_heading_tags(@expert.url) # Must be called after save.
+        Shortener::ShortenedUrl.generate(@expert.url) # Called during create but after save.
       else
         format.html { render :new }
         format.json { render json: @expert.errors, status: :unprocessable_entity }
