@@ -1,4 +1,4 @@
-class friendship < ApplicationRecord
+class Friendship < ApplicationRecord
   belongs_to :expert, :foreign_key => :friend_id
 
   # Look for the inverse expert object and add as a friend.
