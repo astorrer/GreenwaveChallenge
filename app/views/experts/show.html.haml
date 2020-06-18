@@ -1,34 +1,38 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @expert.name
-%p
-  %b Url:
-  = @expert.url
-%p
-  %b Short Url:
-  = short_url(@expert.url)
-  
-%h1 Heading Tags
+.card
+  .card-header
+    Profile
+  .card-body
 
-%table
-  %thead
-    %tr
-      %th Tag
-      %th Url
-      %th Expert
-      %th
-      %th
-      %th
+    %h5.card-title
+      = @expert.name
+    Short URL:
+    = link_to short_url(@expert.url)
+    %br
+    Long URL:
+    = link_to @expert.url
 
-  %tbody
-    - @tags.each do |tag|
-      %tr
-        %td= tag.tag
-        %td= tag.url
-        %td= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' }
+    %hr
+    %h5 Friends
 
-= link_to 'Edit', edit_expert_path(@expert)
-\|
-= link_to 'Back', experts_path
+    %hr
+    %h5 Heading Tags
+
+    %table.table
+      %thead
+        %tr
+          %th Tag
+          %th URL
+          %th
+
+      %tbody
+        - @tags.each do |tag|
+          %tr
+            %td= tag.tag
+            %td= tag.url
+            %td= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' }
+
+  .card-footer
+    = link_to experts_path do
+      .btn.btn-primary Back

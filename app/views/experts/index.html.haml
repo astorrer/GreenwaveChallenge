@@ -1,6 +1,6 @@
-%h1 Listing experts
+%h1 Experts List
 
-%table
+%table.table
   %thead
     %tr
       %th Name
@@ -20,4 +20,5 @@
 
 %br
 
-= link_to 'New Expert', new_expert_path
+= link_to new_expert_path do
+  .btn.btn-primary New Expert
