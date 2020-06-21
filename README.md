@@ -1,12 +1,12 @@
 # Greenwave Code Challenge (Aaron Storrer)
 
-This application was created as an interview challenge. The application is currently being hosted on heroku: http://greenwave.storrer.net 
+This application was created as an interview challenge. The application is currently being hosted on heroku: http://greenwave.storrer.net
 
 ## Application Information
 
 * Ruby 2.7.1
 * Rails 6.x.x
-* SQLite used in development. PostgreSQL in production. (I think this meets the requirements?)
+* SQLite used in development. PostgreSQL in production.
 * Tests written in RSPEC.
 * Bootstrap 4 used for CSS framework.
 
