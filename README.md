@@ -1,6 +1,6 @@
 # Greenwave Code Challenge (Aaron Storrer)
 
-This application was created as an interview challenge.
+This application was created as an interview challenge. The application is currently being hosted on heroku: http://greenwave.storrer.net 
 
 ## Application Information
 
