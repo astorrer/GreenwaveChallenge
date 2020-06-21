@@ -14,8 +14,9 @@ class Friendship < ApplicationRecord
   # Look for the inverse expert object and remove as a friend.
   after_destroy do |f|
     #inverse = Friendship.find(:first, :conditions => {:friend_id => f.expert_id})
-    inverse = Friendship.where(:expert_id => f.friend_id, :friend_id => f.expert_id).first
-    inverse.destroy unless inverse.nil?
+    if Friendship.where(:expert_id => f.friend_id, :friend_id => f.expert_id).present?
+      Friendship.destroy!(:expert_id => f.friend_id, :friend_id => f.expert_id)
+    end
   end
 
   # ORM Notes
